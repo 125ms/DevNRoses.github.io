@@ -1,0 +1,186 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lqyw | Portafolio</title>
+    <style>
+        /* Estilo rapido para que no se vea aburrido */
+        body {
+            background: linear-gradient(-45deg, #121212, #1e1e1e, #2c0000, #121212);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            
+            color: #e0e0e0;
+            font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%;}
+        }
+        
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1{ color: #f31212; border-bottom: 2px solid #f31212; }
+         .tech-list { color: #3498db; font-weight: bold; }
+    
+         @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+            
+         }
+
+         .skin-img {
+            border: 2px solid rgba(243, 156, 18, 0.5);
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.3);
+            transition: all 0.4s ease;
+            animation: float 4s ease-in-out infinite;
+         }
+
+         .skin-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(243, 156, 18, 0.8);
+            border-color: #f39c12;
+            cursor:crosshair;
+         }
+
+         .nombre-animado {
+            background:linear-gradient(90deg, #f31212, #ffffff, #f31212);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: brillo 3s linear infinite;
+            font-weight: bold;
+         }
+
+         @keyframes brillo {
+            to {
+                background-position: 200% center;
+            }
+         }
+
+         .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: 0.3s;
+        }
+        
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border: 1px solid #f31212;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 class="nombre-animado">Diego Antonio Galdos Cruz</h1>
+        <p>Estudiante de Ingenieria en Sistemas @ UTC | Futuro Ingeniero en Audio</p>
+        
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/51309aeb-b6b2-4ff9-82b6-4e08c4b30ab1/descv8m-6ac0664b-2a0c-46dd-90d7-38e1e3b77846.png/v1/fill/w_1920,h_1080,q_80,strp/_csgo__printstream_deagle_x_runtime_by_jian894123078_descv8m-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiIvZi81MTMwOWFlYi1iNmIyLTRmZjktODJiNi00ZTA4YzRiMzBhYjEvZGVzY3Y4bS02YWMwNjY0Yi0yYTBjLTQ2ZGQtOTBkNy0zOGUxZTNiNzc4NDYucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Y2Ga7O9Sr9EBBVmxh4ngqf_xb-OxvLhGcWVv0dDcevE" alt="Deagle Printstream" width="200px">
+    <div class="skill-card"
+        <h3 style="margin-top: 0; color:#f31212;"> 🚀 Misiones de Programación</h3>
+        <ul style="margin-bottom: 0;">
+            <li class="tech-list">Java: Nivel Principiante (P00)</li>
+            <li class="tech-list">JavaScript: Manipulación del DOM</li>
+            <li class="tech-list">HTML/CSS: Diseño de interfaz básica</li>
+        </ul>
+    </div>
+        <h3>Setup & Gaming</h3>
+        <p>Entusiasta y Diseñador de Skins en Counter Strike 2</p>
+    <div id="discord-status" class="skill-card" style="display: flex; align-items: center; gap: 15px; margin-top: 20px; border: 1px solid rgba(255,255,255,0.1);">
+        <img id="discord-avatar" src="" width="45" style="border-radius: 50%; border: 2px solid #23a559;">
+        <div>
+            <p id="discord-user" style="font-weight: bold; margin: 0; font-size: 0.9em; color: #fff;">Cargando...</p>
+            <p id="discord-activity" style="margin: 0; font-size: 0.8em; color:#b5bac1;">Verificando Discord...</p>
+        </div>
+    </div>     
+        <a href="https://github.com/125ms" style="color: 00ff00; text-decoration: none;">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">   Ver mi GitHub oficial
+        </a>
+
+        <h4>Mis Redes Sociales</h4>
+        <ul>
+            <li class="tech-list">Facebook </li>
+            <a href="https://www.facebook.com/dieg.gald209" style="color: #2742f5; text-decoration: none;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" width="20">  Facebook 
+            </a>
+            <li class="tech-list">Instagram</li>
+            <a href="https://www.instagram.com/weircxxre/" style="color: #ebf527; text-decoration: none;">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/3840px-Instagram_icon.png" width="20">  Instagram 
+            </a>
+            <li class="tech-list">Youtube</li>
+            <a href="https://www.youtube.com/@MercyTheBuzzard" style="color: #9E2308; text-decoration: none;">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/3840px-Logo_of_YouTube_%282015-2017%29.svg.png" width="20">   Youtube
+            </a>
+        </ul>
+
+        <h5>Idiomas</h5>
+        <p>Me encanta aprender cualquier idioma actualmente hablo fluidamente los siguientes idiomas:</p>
+    <div style="margin-top: 10px;">
+        <span style="background-color: #3498db; padding: 5px 10px; border-radius: 15px; font-size: 0.8em; margin-right: 5px;">English</span>
+        <span style="background-color: #2ecc71; padding: 5px 10px; border-radius: 15px; font-size: 0.8em; margin-right: 5px;">Français</span>
+        <span style="background-color: #e74c3c; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Deutsch</span>
+    </div>
+    </div>
+   
+    <script>
+    const USER_ID = "1147316221553938562"; // Tu ID de KernelRip
+
+    async function getDiscordStatus() {
+        try {
+            const response = await fetch(`https://api.lanyard.rest/v1/users/${USER_ID}`);
+            const json = await response.json();
+            const data = json.data;
+            
+            // 1. Actualizar tu nombre de Discord
+            document.getElementById('discord-user').innerText = data.discord_user.global_name || data.discord_user.username;
+
+            // 2. Lógica de Actividad (CS2, Blender, etc.)
+            if (data.activities && data.activities.length > 0) {
+                const activity = data.activities.find(a => a.type !== 2) || data.activities[0];
+                document.getElementById('discord-activity').innerText = `${activity.name}: Activo`;
+            } else {
+                document.getElementById('discord-activity').innerText = data.discord_status === 'online' ? 'En línea' : 'Desconectado';
+            }
+
+            
+            // 3. Actualizar  foto de perfil real desde la API
+            const avatarHash = data.discord_user.avatar;
+            document.getElementById('discord-avatar').src = `https://cdn.discordapp.com/avatars/${USER_ID}/${avatarHash}.png`;
+            // --------------------------------------------------
+
+            // 4. Cambiar el color del borde de la card según tu estado
+            const colors = { online: '#23a559', idle: '#f1c40f', dnd: '#f04747', offline: '#747f8d' };
+            document.getElementById('discord-status').style.borderColor = colors[data.discord_status];
+
+        } catch (error) {
+            console.log("Error cargando el status de Discord");
+        }
+    }
+
+    setInterval(getDiscordStatus, 15000); // Se actualiza cada 15 segundos
+    getDiscordStatus(); // Carga inicial
+</script>
+   
+
+    
+</body>
+</html>

@@ -118,7 +118,38 @@
                 height: 80px !important;
             }
         }
-           
+        
+        .background-blob {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 0, 0, 0.15);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .blob-1 { top: 10%; left: -50px; }
+        .blob-2 { bottom: 10%; right: -50px; background: rgba(0, 212, 255, 0.1);} 
+
+        .sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
     </style>
 </head>
 <body>
@@ -127,7 +158,7 @@
         <h1 class="nombre-animado">Diego Antonio Galdos Cruz</h1>
         <p>Estudiante de Ingenieria en Sistemas @ UTC | Futuro Ingeniero en Audio</p>
         
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/51309aeb-b6b2-4ff9-82b6-4e08c4b30ab1/descv8m-6ac0664b-2a0c-46dd-90d7-38e1e3b77846.png/v1/fill/w_1920,h_1080,q_80,strp/_csgo__printstream_deagle_x_runtime_by_jian894123078_descv8m-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiIvZi81MTMwOWFlYi1iNmIyLTRmZjktODJiNi00ZTA4YzRiMzBhYjEvZGVzY3Y4bS02YWMwNjY0Yi0yYTBjLTQ2ZGQtOTBkNy0zOGUxZTNiNzc4NDYucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Y2Ga7O9Sr9EBBVmxh4ngqf_xb-OxvLhGcWVv0dDcevE" alt="Deagle Printstream" width="200px">
+        <img src="diego.jpg" alt="Me" width="200px" style="border-radius: 50px;">
     <div class="skill-card"
         <h3 style="margin-top: 0; color:#f31212;"> 🚀 Misiones de Programación</h3>
         <ul style="margin-bottom: 0;">
@@ -225,6 +256,13 @@
         </iframe>
     </div>
 
-    
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+
+    <div class="sidebar">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+    </div>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Lqyw | Portafolio</title>
     <style>
-        /* Estilo rapido para que no se vea aburrido */
+        
         body {
             background: linear-gradient(-45deg, #121212, #1e1e1e, #2c0000, #121212);
             background-size: 400% 400%;
@@ -150,6 +150,94 @@
             text-shadow: 0 0 10px #ff0000;
         }
 
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #007bff;
+        }
+
+        body.hacker-mode {
+            --bg-color: #0d0d0d;
+            --text-color: #00ff41;
+            --accent-color: #008f11;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        
+.hacker-fab {
+  
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+
+  
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  
+  font-size: 45px; 
+  cursor: pointer;
+  
+  
+  animation: floating 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+
+.hacker-fab:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #ff0800); 
+}
+
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: none;
+}
+
+body.hacker-mode #matrix-canvas {
+    display: block;
+}
+
+body.hacker-mode h1, body.hacker-mode li {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--text-color);
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from {width: 0;}
+  to {width: 100%;}
+}
+    
+@keyframes blink-caret {
+    from, to {border-color: transparent }
+    50% {border-color: var(--text-color);}
+}
     </style>
 </head>
 <body>
@@ -214,10 +302,10 @@
             const json = await response.json();
             const data = json.data;
             
-            // 1. Actualizar tu nombre de Discord
+            
             document.getElementById('discord-user').innerText = data.discord_user.global_name || data.discord_user.username;
 
-            // 2. Lógica de Actividad (CS2, Blender, etc.)
+            
             if (data.activities && data.activities.length > 0) {
                 const activity = data.activities.find(a => a.type !== 2) || data.activities[0];
                 document.getElementById('discord-activity').innerText = `${activity.name}: Activo`;
@@ -226,7 +314,7 @@
             }
 
             
-            // 3. Actualizar  foto de perfil real desde la API
+            
             const avatarHash = data.discord_user.avatar;
             document.getElementById('discord-avatar').src = `https://cdn.discordapp.com/avatars/${USER_ID}/${avatarHash}.png`;
             // --------------------------------------------------
@@ -264,5 +352,31 @@
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-discord"></i></a>
     </div>
+
+    
+    
+    
+    <button id="hacker-btn" class="hacker-fab">
+        <span class="icon">💀</span>
+    </button>
+
+<script>
+    const btn = document.getElementById('hacker-btn');
+
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('hacker-mode');
+  
+ 
+  if(document.body.classList.contains('hacker-mode')) {
+    btn.innerText = "💀";
+  } else {
+    btn.innerText = "💀";
+  }
+});
+</script>
+
+<canvas id="matrix-canvas"></canvas>
+
+
 </body>
 </html>

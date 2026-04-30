@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Lqyw | Portafolio</title>
     <style>
-        /* Estilo rapido para que no se vea aburrido */
         body {
             background: linear-gradient(-45deg, #121212, #1e1e1e, #2c0000, #121212);
             background-size: 400% 400%;
@@ -206,7 +205,7 @@
     </div>
    
     <script>
-    const USER_ID = "1147316221553938562"; // Tu ID de KernelRip
+    const USER_ID = "1147316221553938562"; 
 
     async function getDiscordStatus() {
         try {
@@ -214,10 +213,10 @@
             const json = await response.json();
             const data = json.data;
             
-            // 1. Actualizar tu nombre de Discord
+           
             document.getElementById('discord-user').innerText = data.discord_user.global_name || data.discord_user.username;
 
-            // 2. Lógica de Actividad (CS2, Blender, etc.)
+            
             if (data.activities && data.activities.length > 0) {
                 const activity = data.activities.find(a => a.type !== 2) || data.activities[0];
                 document.getElementById('discord-activity').innerText = `${activity.name}: Activo`;
@@ -226,12 +225,12 @@
             }
 
             
-            // 3. Actualizar  foto de perfil real desde la API
+           
             const avatarHash = data.discord_user.avatar;
             document.getElementById('discord-avatar').src = `https://cdn.discordapp.com/avatars/${USER_ID}/${avatarHash}.png`;
             // --------------------------------------------------
 
-            // 4. Cambiar el color del borde de la card según tu estado
+            
             const colors = { online: '#23a559', idle: '#f1c40f', dnd: '#f04747', offline: '#747f8d' };
             document.getElementById('discord-status').style.borderColor = colors[data.discord_status];
 
@@ -240,8 +239,8 @@
         }
     }
 
-    setInterval(getDiscordStatus, 15000); // Se actualiza cada 15 segundos
-    getDiscordStatus(); // Carga inicial
+    setInterval(getDiscordStatus, 15000); 
+    getDiscordStatus(); 
 </script>
     
     <div class="music-player" style="margin-top: 20px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1)">
